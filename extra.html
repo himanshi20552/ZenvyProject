@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar with Scroll</title>
+    <style>
+        /* Ensure body does not overlap the navbar */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styling */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 20px;
+            background-color: transparent; /* Start as transparent */
+            color: white;
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+            z-index: 1000; /* Keep navbar on top */
+        }
+
+        /* Scrolled state for the navbar */
+        nav.scrolled {
+            background-color: #080A49; /* Change this to the color you want after scroll */
+        }
+
+        /* Section to create scrollable content */
+        section {
+            height: 2000px; /* Give enough height to test scrolling */
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>My Sticky Navbar</h1>
+    </nav>
+
+    <section>
+        <h2>Scroll Down to See the Navbar Color Change</h2>
+        <p>Keep scrolling down to test the behavior of the sticky navbar. It will change color once you scroll past a certain point.</p>
+    </section>
+
+    <script>
+        // JavaScript to change navbar color on scroll
+        window.addEventListener("scroll", function() {
+            const navbar = document.querySelector("nav");
+            if (window.scrollY > 50) {  // If scroll is more than 50px
+                navbar.classList.add("scrolled");  // Add 'scrolled' class
+            } else {
+                navbar.classList.remove("scrolled");  // Remove the class when scrolled back up
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+.section-container {
+    background-color: #e63e2b;  /* Background color */
+    position: relative;          /* Position for the triangle */
+}
+
+.triangular-end {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);  /* Create a triangular shape */
+    background-color: #e63e2b;  /* Same background color */
+}
+
+.content {
+    padding: 20px;  /* Padding inside the content */
+    display: flex;  /* Flexbox for layout */
+    justify-content: space-around;  /* Space between items */
+}
+
+.coaching-center, .coaching-reviews, .personalized-recommendations {
+    text-align: center;  /* Center the text */
+    max-width: 300px;    /* Max width */
+}
+
+.icon {
+    font-size: 50px;  /* Icon size */
+}

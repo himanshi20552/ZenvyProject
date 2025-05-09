@@ -10,7 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <style>
+  <script src="javascript/page3.js"></script>
+  <style>
+        
         *{
             padding: 0;
             margin: 0;
@@ -47,7 +49,7 @@
             font-size: 20px;
         }
         .space{
-            height: 30px;
+            height: 45px;
         }
         h1{
             font-size: 42px;
@@ -118,6 +120,7 @@
             display: flex;
             align-items: center;
             padding: 20px;
+            margin-bottom: 20px;
             margin-left: 100px;
         }
         .sectionheading span{
@@ -189,11 +192,80 @@
             justify-content: center;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+
         }
         .d41 img{
-            width: 90%;
-            height: 90%;
+            width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
         }
+        .overlay-text {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.d41:hover .overlay-text {
+  opacity: 1;
+}
+.faq {
+    padding: 40px 20px;
+    background: rgb(217, 217, 217);;
+    box-shadow: #000 2px 2px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-item {
+    width: 900px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    
+}
+
+.faq-question {
+    font-size: 18px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    background: #0077b6;
+    color: white;
+    width: 900px;
+    max-width: 100%;
+    padding: 15px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.faq-answer {
+    background: #e0f7fa;
+    padding: 15px;
+    display: none;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .faq-question {
+      width: 100%;         /* full width on tablets & phones */
+      padding: 12px;
+    }
+  }
+
+
 
     </style>
 </head>
@@ -305,10 +377,13 @@
         </div>
     </div>
     <div class="space"></div>
+    <div class="space"></div>
+
 <div class="d3">
     <div class="d3-l">
         <img src="images/page3-d3.png" alt="">
     </div>
+
     <div class="d3-r">
         <div class="d3-r-text">
         <h2>Why XYZ?</h2>
@@ -332,11 +407,16 @@
     </div>
 </div>
 <div class="space"></div>
+
+<div class="space"></div>
 <div class="sectionheading" style="justify-content: center;">
     <span>Meet Our Toppers</span>
 </div>
     <div class="d2">
-        <div class="d41"><img src="images/page3-toppers.png" alt=""></div>
+        <div class="d41">
+            <img src="images/page3-toppers.png" alt="">
+            <div class="overlay-text">Topper Name<br>Rank 1 - JEE Advanced</div>
+        </div>
         <div class="d41"><img src="images/page3-toppers.png" alt=""></div>
         <div class="d41"><img src="images/page3-toppers.png" alt=""></div>
         <div class="d41"><img src="images/page3-toppers.png" alt=""></div>
@@ -348,6 +428,28 @@
 
 <div class="sectionheading" style="justify-content: center;">
     <span>Frequently Asked Questions</span>
+    </div>
+
+      <!-- FAQ Section -->
+      <section class="faq">
+        <div class="faq-item">
+            <button class="faq-question">Is coaching different for different classes?</button>
+            <div class="faq-answer">Yes, courses are customized for each class from 5th to 12th and XII+.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Is there any scholarship program?</button>
+            <div class="faq-answer">Yes, top 500 students are eligible for 100% scholarship.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How to enroll for NEET exam preparation?</button>
+            <div class="faq-answer">You can apply through our online portal or visit our nearest branch.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Are online sessions available?</button>
+            <div class="faq-answer">Yes, we offer both online and offline sessions for all students.</div>
+        </div>
+    </section>
+
 </div>
 </body>
 </html>

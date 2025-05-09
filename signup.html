@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login | Zenvy</title>
-  <link rel="stylesheet" href="login.css">
+  <title>Sign Up | Zenvy</title>
+  <link rel="stylesheet" href="signup.css">
 </head>
 <body>
 
@@ -13,23 +13,28 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="../About Page/about.html" style="color: white; font-weight: bold;">About Us</a>
-      <a href="../Sign Up/signup.html">Sign Up</a>
     </nav>
   </header>
 
-  <div class="login-container">
-    <h1>Welcome Back</h1>
-    <form action="#" method="post" class="login-form">
+  <div class="signup-container">
+    <h1>Create Your Account</h1>
+    <form action="#" method="post" class="signup-form">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
       <label for="email">Email Address</label>
       <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
 
       <label for="password">Password</label>
       <input type="password" id="password" name="password" required>
 
-      <button type="submit">Login</button>
+      <button type="submit">Sign Up</button>
     </form>
 
-    <p class="signup-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+    <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
   </div>
 
   <footer class="footer">

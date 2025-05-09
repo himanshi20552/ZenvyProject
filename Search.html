@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenvy - Your Path to Success</title>
+  <link rel="stylesheet" href="Search.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../Main Page/Main.html" class="logo">
+        <img src="Logo Zenvy.jpg" alt="Zenvy Logo" />
+        <span>Zenvy</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="./Homee.html">Home</a>
+      <a href="../About Page/about.html">About us</a>
+      <a href="../Sign Up/login.html">Login</a>
+      <a href="../Sign Up/signup.html">Signup</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Your Path to Success Starts Here!</h1>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search Coaching name" />
+      <button type="button" class="search-btn">
+        <img src="search.gif" alt="Search" />
+      </button>
+    </div>
+
+    <section class="recommendations">
+      <h2>Recommended by us :</h2>
+      <div class="centers-grid">
+        <div class="center-card" data-name="abc coaching" data-exam="jee mains/jee advance" data-state="delhi">
+          <img src="image.png" alt="Coaching Center" />
+          <h3>ABC Coaching</h3>
+          <p><strong>Exam:</strong> JEE Mains / JEE Advance</p>
+          <p><strong>State:</strong> Delhi</p>
+        </div>
+        <div class="center-card" data-name="xyz coaching" data-exam="neet" data-state="rajasthan">
+          <img src="life purpose.jpeg" alt="Coaching Center" />
+          <h3>XYZ Coaching</h3>
+          <p><strong>Exam:</strong> NEET</p>
+          <p><strong>State:</strong> Rajasthan</p>
+        </div>
+        <div class="center-card" data-name="cdf coaching" data-exam="upsc" data-state="uttar pradesh">
+          <img src="Never Make These Graduation Etiquette Mistakes.jpeg" alt="Coaching Center" />
+          <h3>CDF Coaching</h3>
+          <p><strong>Exam:</strong> UPSC</p>
+          <p><strong>State:</strong> Uttar Pradesh</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="filters">
+      <h2>Apply Filters</h2>
+      <div class="filter-group">
+        <label>Search by State</label>
+        <select id="stateFilter">
+          <option value="">Select State</option>
+          <option value="delhi">Delhi</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="uttar pradesh">Uttar Pradesh</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Search by Exams</label>
+        <select id="examFilter">
+          <option value="">Select Exam</option>
+          <option value="jee mains/jee advance">JEE Mains / JEE Advance</option>
+          <option value="neet">NEET</option>
+          <option value="upsc">UPSC</option>
+        </select>
+      </div>
+
+      <button type="button" class="clear-btn" id="clearFilters">Clear All</button>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>Email: support@zenvy.com</li>
+            <li>Phone: +91-8434460542</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Zenvy. All rights reserved.
+      </div>
+    </footer>
+  </main>
+
+  <script src="Search.js"></script>
+</body>
+</html>

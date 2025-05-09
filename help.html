@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need Help - Zenvy Coaching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Zenvy Coaching</h1>
+            <nav>
+                <a href="index.html" class="px-4 hover:underline">Home</a>
+                <a href="help.html" class="px-4 hover:underline">Need Help</a>
+                <a href="support.html" class="px-4 hover:underline">Contact Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <section class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800">Need Help?</h2>
+            <p class="text-gray-600 mt-4">Find answers to common questions about our coaching programs for competitive exams and school-level preparation.</p>
+        </section>
+
+        <!-- Search Bar -->
+        <div class="max-w-xl mx-auto mb-8">
+            <input type="text" id="faqSearch" placeholder="Search for a question..." class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+
+        <!-- FAQ Section -->
+        <section id="faqList" class="grid gap-6">
+            <!-- FAQs will be dynamically loaded here -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Zenvy Coaching. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JSON Data for FAQs -->
+    <script type="application/json" id="faqData">
+        [
+            {
+                "question": "What types of competitive exams do you prepare students for?",
+                "answer": "We offer coaching for exams like JEE, NEET, UPSC, SSC, and state-level competitive exams."
+            },
+            {
+                "question": "Do you provide coaching for school-level students?",
+                "answer": "Yes, we have programs for CBSE, ICSE, and state board students from grades 6 to 12."
+            },
+            {
+                "question": "Are online classes available?",
+                "answer": "Yes, we offer both online and offline classes with interactive live sessions and recorded lectures."
+            },
+            {
+                "question": "What is the fee structure for your courses?",
+                "answer": "Fees vary by course. Please contact our support team or visit our courses page for detailed information."
+            },
+            {
+                "question": "Do you offer trial classes?",
+                "answer": "Yes, we provide free demo classes for most of our programs. Register to schedule one!"
+            }
+        ]
+    </script>
+
+    <!-- JavaScript for FAQ Search -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqData = JSON.parse(document.getElementById('faqData').textContent);
+            const faqList = document.getElementById('faqList');
+            const searchInput = document.getElementById('faqSearch');
+
+            // Render FAQs
+            function renderFAQs(data) {
+                faqList.innerHTML = '';
+                data.forEach(item => {
+                    const faqItem = document.createElement('div');
+                    faqItem.className = 'faq-item bg-gray-400 p-6 rounded-lg shadow-md';
+                    faqItem.innerHTML = `
+                        <h3 class="text-xl font-semibold text-black-800">${item.question}</h3>
+                        <p class="text-white mt-2">${item.answer}</p>
+                    `;
+                    faqList.appendChild(faqItem);
+                });
+            }
+
+            // Initial render
+            renderFAQs(faqData);
+
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase();
+                const filteredFAQs = faqData.filter(item =>
+                    item.question.toLowerCase().includes(query) || item.answer.toLowerCase().includes(query)
+                );
+                renderFAQs(filteredFAQs);
+            });
+        });
+    </script>
+</body>
+</html>

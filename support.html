@@ -1,133 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Our Support Team - Zenvy Coaching</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-        .error {
-            color: red;
-            font-size: 0.875rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Our Support Team - Zenvy Coaching</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+   
+  .header {
+    background-color: #0f0f2d;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .header nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+   
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #2d3748;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro p {
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .container {
+      background-color: #1e3a8a;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 40px auto;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #3b82f6;
+    }
+
+    button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+    }
+
+    .error {
+      color: #ff9999;
+      font-size: 14px;
+      display: none;
+    }
+
+    .success-message {
+      margin-top: 20px;
+      color: #10b981;
+      font-weight: bold;
+      display: none;
+    }
+
+    .contact-info {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .contact-info p {
+      color: #555;
+      margin: 5px 0;
+    }
+
+    footer {
+      background-color: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 15px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Header -->
-    <header class="bg-blue-600 text-white py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Zenvy Coaching</h1>
-            <nav>
-                <a href="Homee.html" class="px-4 hover:underline">Home</a>
-                <a href="help.html" class="px-4 hover:underline">Need Help</a>
-                <a href="support.html" class="px-4 hover:underline">Contact Support</a>
-            </nav>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Zenvy</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="help2.html" style="color: white; font-weight: bold;">Help</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="intro">
+      <h2>Contact Our Support Team</h2>
+      <p>We're here to assist you with any queries about our coaching programs. Reach out to us!</p>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="container">
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+       <input type="hidden" name="access_key" value="f6a71352-c129-4323-b25e-de59dc2d6f87">
+
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <p id="nameError" class="error">Please enter your name.</p>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <section class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800">Contact Our Support Team</h2>
-            <p class="text-gray-600 mt-4">We're here to assist you with any queries about our coaching programs. Reach out to us!</p>
-        </section>
-
-        <!-- Contact Form -->
-        <section class="max-w-lg mx-auto bg-blue-900 p-8 rounded-lg shadow-md">
-            <form id="contactForm">
-                <div class="mb-4">
-                    <label for="name" class="block text-white font-semibold">Name</label>
-                    <input type="text" id="name" name="name" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
-                    <p id="nameError" class="error hidden">Please enter your name.</p>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-white font-semibold">Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
-                    <p id="emailError" class="error hidden">Please enter a valid email address.</p>
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block text-white font-semibold">Message</label>
-                    <textarea id="message" name="message" rows="5" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
-                    <p id="messageError" class="error hidden">Please enter your message.</p>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Send Message</button>
-            </form>
-            <p id="formSuccess" class="text-green-600 mt-4 hidden">Your message has been sent successfully!</p>
-        </section>
-
-        <!-- Contact Details -->
-        <section class="mt-12 text-center">
-            <h3 class="text-2xl font-semibold text-gray-800">Other Ways to Reach Us</h3>
-            <p class="text-gray-600 mt-4">Email: support@zenvycoaching.com</p>
-            <p class="text-gray-600">Phone: +91-123-456-7890</p>
-            <p class="text-gray-600">Address: 123 Education Lane, Knowledge City, India</p>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-4">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Zenvy Coaching. All rights reserved.</p>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <p id="emailError" class="error">Please enter a valid email address.</p>
         </div>
-    </footer>
 
-    <!-- JavaScript for Form Validation -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('contactForm');
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const messageInput = document.getElementById('message');
-            const nameError = document.getElementById('nameError');
-            const emailError = document.getElementById('emailError');
-            const messageError = document.getElementById('messageError');
-            const formSuccess = document.getElementById('formSuccess');
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <p id="messageError" class="error">Please enter your message.</p>
+        </div>
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                let isValid = true;
+        <button type="submit">Send Message</button>
+        <p id="formSuccess" class="success-message">Your message has been sent successfully!</p>
+      </form>
+    </section>
 
-                // Reset error messages
-                nameError.classList.add('hidden');
-                emailError.classList.add('hidden');
-                messageError.classList.add('hidden');
-                formSuccess.classList.add('hidden');
+    <!-- Contact Details -->
+    <section class="contact-info">
+      <h3>Other Ways to Reach Us</h3>
+      <p>Email: support@zenvycoaching.com</p>
+      <p>Phone: +91-123-456-7890</p>
+      <p>Address: 123 Education Lane, Knowledge City, India</p>
+    </section>
+  </main>
 
-                // Validate name
-                if (!nameInput.value.trim()) {
-                    nameError.classList.remove('hidden');
-                    isValid = false;
-                }
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Zenvy Coaching. All rights reserved.</p>
+  </footer>
 
-                // Validate email
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(emailInput.value.trim())) {
-                    emailError.classList.remove('hidden');
-                    isValid = false;
-                }
+  <!-- JavaScript + JSON -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const nameError = document.getElementById('nameError');
+      const emailError = document.getElementById('emailError');
+      const messageError = document.getElementById('messageError');
+      const formSuccess = document.getElementById('formSuccess');
 
-                // Validate message
-                if (!messageInput.value.trim()) {
-                    messageError.classList.remove('hidden');
-                    isValid = false;
-                }
+      form.addEventListener('submit', (e) => {
+        
 
-                if (isValid) {
-                    // Simulate form submission
-                    const formData = {
-                        name: nameInput.value.trim(),
-                        email: emailInput.value.trim(),
-                        message: messageInput.value.trim()
-                    };
-                    console.log('Form Data:', formData); // Replace with actual API call
-                    formSuccess.classList.remove('hidden');
-                    form.reset();
-                }
-            });
-        });
-    </script>
+        let isValid = true;
+        nameError.style.display = 'none';
+        emailError.style.display = 'none';
+        messageError.style.display = 'none';
+        formSuccess.style.display = 'none';
+
+        if (!nameInput.value.trim()) {
+          nameError.style.display = 'block';
+          isValid = false;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+          emailError.style.display = 'block';
+          isValid = false;
+        }
+
+        if (!messageInput.value.trim()) {
+          messageError.style.display = 'block';
+          isValid = false;
+        }
+
+        
+        if (!isValid) {
+         e.preventDefault(); 
+          return;
+          }    
+
+      });
+    });
+  </script>
 </body>
 </html>

@@ -26,25 +26,28 @@
       <h3>To Fill Application Form</h3>
       <p class="session">Session 2025–2026</p>
 
-      <form id="registrationForm">
-        <input type="text" name="name" placeholder="Enter Your Name" required />
-        <input type="email" name="email" placeholder="Enter Email Id" required />
-        <input type="text" name="mobile" placeholder="Add Mobile No." required />
-        <input type="password" name="password" placeholder="Enter Password" required />
+     <form id="registrationForm" autocomplete="off">
+  <input type="text" name="name" placeholder="Enter Your Name" autocomplete="off" required />
+  <input type="email" name="email" placeholder="Enter Email Id" autocomplete="off" required />
+  <input type="text" name="mobile" value="9999999999" hidden />
 
-        <div class="phone">
-          <input type="text" value="[+91] India" disabled />
-          <input type="text" name="phone" placeholder="" required />
-        </div>
+  <input type="password" name="password" placeholder="Enter Password" autocomplete="new-password" required />
+  
+  <div class="phone">
+    <input type="text" value="[+91] India" disabled />
+    <input type="text" name="phone" placeholder="" autocomplete="off" required />
+  </div>
 
-        <button type="submit">Submit</button>
-      </form>
+  <button type="submit">Submit</button>
+</form>
+
     </div>
 
     <div class="illustration">
       <img src="images/enroll.png" alt="Illustration" />
     </div>
   </section>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
   <script src="javascript/script7.js"></script>
 </body>

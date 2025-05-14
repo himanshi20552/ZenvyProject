@@ -4,20 +4,20 @@ const data = {
             title: "JEE (Main)",
             description: "Courses for JEE Main preparation with expert faculty.",
             icon: "images/jee.png",
-            href: "6.html"
+            href: "course.html"
         },
         {
             title: "JEE Advanced",
             description: "Courses for JEE Advanced preparation with expert faculty.",
             icon: "images/advanced.png",
-            href: "6.html"
+            href: "course.html"
     
         },
         {
             title: "UPSC",
             description: "Courses for UPSC preparation with expert faculty.",
             icon: "images/jee.png",
-            href: "6.html"
+            href: "course.html"
 
         }
     ],

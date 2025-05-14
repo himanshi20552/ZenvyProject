@@ -165,7 +165,9 @@
 
     <!-- Contact Form -->
     <section class="container">
-      <form id="contactForm">
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+       <input type="hidden" name="access_key" value="f6a71352-c129-4323-b25e-de59dc2d6f87">
+
         <div>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
@@ -216,7 +218,7 @@
       const formSuccess = document.getElementById('formSuccess');
 
       form.addEventListener('submit', (e) => {
-        e.preventDefault();
+        
 
         let isValid = true;
         nameError.style.display = 'none';
@@ -240,18 +242,12 @@
           isValid = false;
         }
 
-        if (isValid) {
-          const supportData = {
-            name: nameInput.value.trim(),
-            email: emailInput.value.trim(),
-            message: messageInput.value.trim()
-          };
+        
+        if (!isValid) {
+         e.preventDefault(); 
+          return;
+          }    
 
-          console.log("Sending support message:", JSON.stringify(supportData, null, 2));
-
-          formSuccess.style.display = 'block';
-          form.reset();
-        }
       });
     });
   </script>

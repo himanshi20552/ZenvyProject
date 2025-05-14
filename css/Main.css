@@ -1,0 +1,301 @@
+    /* ===== BASIC SETUP ===== */
+    /* Set up colors and common values we'll use throughout the page */
+    :root {
+      --blue: rgb(8, 10, 73);      /* Main blue color */
+      --orange: rgb(228, 74, 39);  /* Main orange color */
+      --white: #fff;               /* White color */
+      --gray: #333;                /* Dark gray for text */
+      --light-gray: #f9f9f9;       /* Light gray for backgrounds */
+      --round: 8px;                /* For rounded corners */
+    }
+
+    /* Reset default browser styles */
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+
+    /* Basic body styles */
+    body {
+      line-height: 1.6;
+      color: var(--gray);
+    }
+
+    /* ===== NAVIGATION BAR ===== */
+    .navbar {
+      /* Position and layout */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      padding-right: calc(2rem + 17px); /* Add extra padding for scrollbar */
+      
+      /* Colors and effects */
+      background-color: var(--blue);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Logo styles */
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    /* Login/Signup button styles */
+    .auth-link {
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--orange);
+      border-radius: var(--round);
+      font-weight: bold;
+      margin-right: 0; /* Remove margin since we're using padding on navbar */
+    }
+
+    .auth-link:hover {
+      background-color: #ff6b4a;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      /* Layout */
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6rem 2rem 2rem;
+      
+      /* Colors */
+      background: linear-gradient(135deg, var(--blue) 0%, #1a1a2e 100%);
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 600px;
+      padding-right: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      max-width: 600px;
+      border-radius: var(--round);
+    }
+
+    /* ===== BUTTON STYLES ===== */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: var(--round);
+      font-size: 1.1rem;
+    }
+
+    .btn:hover {
+      background-color: #ff6b4a;
+    }
+
+    /* ===== GUIDE SECTION ===== */
+    .guide {
+      padding: 6rem 2rem;
+      background-color: var(--light-gray);
+      text-align: center;
+    }
+
+    .guide h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--blue);
+    }
+
+    /* Features grid layout */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-box {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: var(--round);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-box img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== STATS SECTION ===== */
+    .stats {
+      background-color: var(--blue);
+      padding: 4rem 2rem;
+      color: var(--white);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item i {
+      font-size: 2.5rem;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 6rem 2rem;
+      background-color: var(--light-gray);
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--blue);
+    }
+
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: var(--round);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-slide {
+      display: none;
+      padding: 2rem;
+    }
+
+    .testimonial-slide.active {
+      display: block;
+    }
+
+    .testimonial-slide p {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--gray);
+      font-style: italic;
+    }
+
+    .testimonial-slide span {
+      font-size: 1.2rem;
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta {
+      background-color: var(--blue);
+      padding: 6rem 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .btn {
+      padding: 1.2rem 3rem;
+      font-size: 1.2rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background-color: #000;
+      color: var(--white);
+      padding: 4rem 2rem;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-column h3 {
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+
+    .footer-column a {
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem 2rem; /* Reset padding on mobile */
+      }
+      
+      .auth-link {
+        margin-right: 0;
+      }
+
+      /* Hero section */
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5rem;
+      }
+
+      .hero-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }

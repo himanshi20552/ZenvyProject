@@ -4,32 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sign Up | Zenvy</title>
-  <link rel="stylesheet" href="signup.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
 
   <header class="header">
-    <div class="logo">Zenvy</div>
+    <a href="Main.html" class="logo">Zenvy</a>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="../About Page/about.html" style="color: white; font-weight: bold;">About Us</a>
+      <a href="Homee.html">Home</a>
+      <a href="about.html">About Us</a>
     </nav>
   </header>
 
   <div class="signup-container">
-    <h1>Create Your Account</h1>
+    <h1>Register</h1>
     <form action="#" method="post" class="signup-form">
-      <label for="fullname">Full Name</label>
-      <input type="text" id="fullname" name="fullname" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
+      <div class="name-fields">
+        <div class="name-field">
+          <label for="firstname">First Name</label>
+          <input type="text" id="firstname" name="firstname" required placeholder="Enter your first name">
+        </div>
+        <div class="name-field">
+          <label for="lastname">Last Name</label>
+          <input type="text" id="lastname" name="lastname" required placeholder="Enter your last name">
+        </div>
+      </div>
 
       <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required>
+      <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email">
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password" required placeholder="Create a password">
 
       <button type="submit">Sign Up</button>
     </form>

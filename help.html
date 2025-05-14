@@ -1,119 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Need Help - Zenvy Coaching</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-        .faq-item {
-            transition: all 0.3s ease;
-        }
-        .faq-item.hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Need Help - Zenvy Coaching</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f2ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #003366;
+      color: white;
+      padding: 15px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+    }
+
+    .intro {
+      text-align: center;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    #faqSearch {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #66a3ff;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+
+    .faq-item {
+      width: 100%;
+      background-color: #07b0f9;
+      border-left: 6px solid #003366;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .faq-item h3 {
+      margin: 0;
+      color: #010d19;
+      position: relative;
+    }
+
+    .faq-item p {
+      margin-top: 8px;
+      color: white;
+      font-size: 18px;
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.active p {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Header -->
-    <header class="bg-blue-600 text-white py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Zenvy Coaching</h1>
-            <nav>
-                <a href="index.html" class="px-4 hover:underline">Home</a>
-                <a href="help.html" class="px-4 hover:underline">Need Help</a>
-                <a href="support.html" class="px-4 hover:underline">Contact Support</a>
-            </nav>
-        </div>
-    </header>
+<body>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <section class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800">Need Help?</h2>
-            <p class="text-gray-600 mt-4">Find answers to common questions about our coaching programs for competitive exams and school-level preparation.</p>
-        </section>
+  <header>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1>Zenvy Coaching</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="help.html">Need Help</a>
+        <a href="support.html">Contact Support</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Search Bar -->
-        <div class="max-w-xl mx-auto mb-8">
-            <input type="text" id="faqSearch" placeholder="Search for a question..." class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
-        </div>
+  <main>
+    <h2>Need Help?</h2>
+    <p class="intro">Find answers to common questions about our coaching programs for competitive exams and school-level preparation.</p>
 
-        <!-- FAQ Section -->
-        <section id="faqList" class="grid gap-6">
-            <!-- FAQs will be dynamically loaded here -->
-        </section>
-    </main>
+    <input type="text" id="faqSearch" placeholder="Search for a question..." />
 
-    <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-4">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Zenvy Coaching. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="faqList"></div>
+  </main>
 
-    <!-- JSON Data for FAQs -->
-    <script type="application/json" id="faqData">
-        [
-            {
-                "question": "What types of competitive exams do you prepare students for?",
-                "answer": "We offer coaching for exams like JEE, NEET, UPSC, SSC, and state-level competitive exams."
-            },
-            {
-                "question": "Do you provide coaching for school-level students?",
-                "answer": "Yes, we have programs for CBSE, ICSE, and state board students from grades 6 to 12."
-            },
-            {
-                "question": "Are online classes available?",
-                "answer": "Yes, we offer both online and offline classes with interactive live sessions and recorded lectures."
-            },
-            {
-                "question": "What is the fee structure for your courses?",
-                "answer": "Fees vary by course. Please contact our support team or visit our courses page for detailed information."
-            },
-            {
-                "question": "Do you offer trial classes?",
-                "answer": "Yes, we provide free demo classes for most of our programs. Register to schedule one!"
-            }
-        ]
-    </script>
+  <footer>
+    <p>&copy; 2025 Zenvy Coaching. All rights reserved.</p>
+  </footer>
 
-    <!-- JavaScript for FAQ Search -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqData = JSON.parse(document.getElementById('faqData').textContent);
-            const faqList = document.getElementById('faqList');
-            const searchInput = document.getElementById('faqSearch');
+  <script>
+    const faqData = [
+      {
+        question: "What types of competitive exams do you prepare students for?",
+        answer: "We offer coaching for exams like JEE, NEET, UPSC, SSC, and state-level competitive exams."
+      },
+      {
+        question: "Do you provide coaching for school-level students?",
+        answer: "Yes, we have programs for CBSE, ICSE, and state board students from grades 6 to 12."
+      },
+      {
+        question: "Are online classes available?",
+        answer: "Yes, we offer both online and offline classes with interactive live sessions and recorded lectures."
+      },
+      {
+        question: "What is the fee structure for your courses?",
+        answer: "Fees vary by course. Please contact our support team or visit our courses page for detailed information."
+      },
+      {
+        question: "Do you offer trial classes?",
+        answer: "Yes, we provide free demo classes for most of our programs. Register to schedule one!"
+      }
+    ];
 
-            // Render FAQs
-            function renderFAQs(data) {
-                faqList.innerHTML = '';
-                data.forEach(item => {
-                    const faqItem = document.createElement('div');
-                    faqItem.className = 'faq-item bg-gray-400 p-6 rounded-lg shadow-md';
-                    faqItem.innerHTML = `
-                        <h3 class="text-xl font-semibold text-black-800">${item.question}</h3>
-                        <p class="text-white mt-2">${item.answer}</p>
-                    `;
-                    faqList.appendChild(faqItem);
-                });
-            }
+    const faqList = document.getElementById('faqList');
+    const searchInput = document.getElementById('faqSearch');
 
-            // Initial render
-            renderFAQs(faqData);
-
-            // Search functionality
-            searchInput.addEventListener('input', () => {
-                const query = searchInput.value.toLowerCase();
-                const filteredFAQs = faqData.filter(item =>
-                    item.question.toLowerCase().includes(query) || item.answer.toLowerCase().includes(query)
-                );
-                renderFAQs(filteredFAQs);
-            });
+    function renderFAQs(faqs) {
+      faqList.innerHTML = '';
+      faqs.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'faq-item';
+        div.innerHTML = `<h3>${item.question}</h3><p>${item.answer}</p>`;
+        
+        // Add click to expand/collapse
+        div.addEventListener('click', () => {
+          div.classList.toggle('active');
         });
-    </script>
+
+        faqList.appendChild(div);
+      });
+    }
+
+    searchInput.addEventListener('input', () => {
+      const value = searchInput.value.toLowerCase();
+      const filtered = faqData.filter(faq =>
+        faq.question.toLowerCase().includes(value) ||
+        faq.answer.toLowerCase().includes(value)
+      );
+      renderFAQs(filtered);
+    });
+
+    renderFAQs(faqData);
+  </script>
 </body>
 </html>

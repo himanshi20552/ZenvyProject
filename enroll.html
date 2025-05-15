@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zenvy Registration Panel</title>
-  <link rel="stylesheet" href="css/style7.css" />
+  <link rel="stylesheet" href="Payment.css" />
 </head>
 <body>
 
@@ -29,10 +29,7 @@
      <form id="registrationForm" autocomplete="off">
   <input type="text" name="name" placeholder="Enter Your Name" autocomplete="off" required />
   <input type="email" name="email" placeholder="Enter Email Id" autocomplete="off" required />
-  <input type="text" name="mobile" value="9999999999" hidden />
-
   <input type="password" name="password" placeholder="Enter Password" autocomplete="new-password" required />
-  
   <div class="phone">
     <input type="text" value="[+91] India" disabled />
     <input type="text" name="phone" placeholder="" autocomplete="off" required />
@@ -47,8 +44,12 @@
       <img src="images/enroll.png" alt="Illustration" />
     </div>
   </section>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-  <script src="javascript/script7.js"></script>
+
+  <script src="Payment.js"></script>
 </body>
 </html>

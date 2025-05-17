@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Center Details - Zenvy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/coaching.css">
+</head>
+<body>
+    <header class="header">
+        <a href="Main.html" class="logo">Zenvy</a>
+        <nav>
+            <a href="/home">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/signup">Sign Up</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="coachingDetails">
+            <!-- Content will be dynamically populated -->
+        </div>
+    </main>
+
+    <script>
+        async function fetchCoachingDetails() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const centerId = urlParams.get('id');
+                
+                if (!centerId) {
+                    throw new Error('No center ID provided');
+                }
+
+                const response = await fetch(`/api/coaching-centers/${centerId}`);
+                const center = await response.json();
+                displayCoachingDetails(center);
+            } catch (error) {
+                console.error('Error fetching coaching details:', error);
+                document.getElementById('coachingDetails').innerHTML = `
+                    <div class="error-message">
+                        <h2>Error Loading Center Details</h2>
+                        <p>Please try again later or contact support if the problem persists.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function displayCoachingDetails(center) {
+            const container = document.getElementById('coachingDetails');
+            
+            container.innerHTML = `
+                <section class="center-header">
+                    <h1>${center.name}</h1>
+                    <div class="center-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> ${center.location}</span>
+                        <span><i class="fas fa-star"></i> ${center.rating}/5 Rating</span>
+                        <span><i class="fas fa-graduation-cap"></i> ${center.examType}</span>
+                    </div>
+                </section>
+
+                <section class="center-description">
+                    <h2>About the Center</h2>
+                    <p>${center.description}</p>
+                </section>
+
+                <section class="why-join">
+                    <h2>Why Join Us</h2>
+                    <div class="why-join-grid">
+                        <div class="why-join-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Proven Track Record</h3>
+                            <p>Consistently high success rates with ${center.successRate}% of our students achieving their target scores.</p>
+                        </div>
+                        <div class="why-join-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Expert Faculty</h3>
+                            <p>Learn from experienced educators with an average of ${center.facultyExperience} years of teaching experience.</p>
+                        </div>
+                        <div class="why-join-card">
+                            <i class="fas fa-book"></i>
+                            <h3>Comprehensive Study Material</h3>
+                            <p>Access to extensive study materials, practice tests, and digital resources.</p>
+                        </div>
+                        <div class="why-join-card">
+                            <i class="fas fa-laptop"></i>
+                            <h3>Modern Infrastructure</h3>
+                            <p>State-of-the-art classrooms, digital learning tools, and comfortable study spaces.</p>
+                        </div>
+                        <div class="why-join-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Flexible Learning</h3>
+                            <p>Choose between online, offline, or hybrid learning modes to suit your schedule.</p>
+                        </div>
+                        <div class="why-join-card">
+                            <i class="fas fa-medal"></i>
+                            <h3>Personalized Attention</h3>
+                            <p>Small batch sizes and individual mentoring to ensure your success.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="courses">
+                    <h2>Courses Offered</h2>
+                    <div class="courses-grid">
+                        ${center.courses.map(course => `
+                            <div class="course-card" onclick="window.location.href='/course?id=${course._id}'" style="cursor: pointer;">
+                                <img src="${course.image || 'https://i.pinimg.com/736x/8e/0a/bf/8e0abfcdb580ab0e77fa83da534a815c.jpg'}" alt="${course.name}" class="course-image">
+                                <div class="course-content">
+                                    <h3>${course.name}</h3>
+                                    <p>${course.description}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <section class="demo-videos">
+                    <h2>Demo Videos</h2>
+                    <div class="video-grid">
+                        ${center.demoVideos.map(video => `
+                            <div class="video-card">
+                                <h3>${video.title}</h3>
+                                <iframe src="${video.url}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <section class="faculty">
+                    <h2>Our Faculty</h2>
+                    <div class="faculty-grid">
+                        ${center.faculty.map(member => `
+                            <div class="faculty-card">
+                                <h3>${member.name}</h3>
+                                <p><strong>Specialization:</strong> ${member.specialization}</p>
+                                <p><strong>Experience:</strong> ${member.experience}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <section class="toppers">
+                    <h2>Our Toppers</h2>
+                    <div class="toppers-grid">
+                        ${center.toppers.map(topper => `
+                            <div class="topper-card">
+                                <img src="${topper.image}" alt="${topper.name}">
+                                <h3>${topper.name}</h3>
+                                <p><strong>Rank:</strong> ${topper.rank}</p>
+                                <p><strong>Exam:</strong> ${topper.exam}</p>
+                                <p><strong>Score:</strong> ${topper.score}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <section class="testimonials">
+                    <h2>Student Testimonials</h2>
+                    <div class="testimonials-grid">
+                        ${center.testimonials.map(testimonial => `
+                            <div class="testimonial-card">
+                                <img src="${testimonial.image}" alt="${testimonial.studentName}">
+                                <h3>${testimonial.studentName}</h3>
+                                <p>${testimonial.comment}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+        }
+
+        // Load coaching details when page loads
+        document.addEventListener('DOMContentLoaded', fetchCoachingDetails);
+    </script>
+
+    <footer class="footer">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Your trusted partner in finding the best coaching centers across India.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="/about">About Us</a>
+                <a href="/login">Login</a>
+                <a href="/signup">Sign Up</a>
+                <a href="faq.html">FAQs</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: support@zenvy.com</p>
+                <p>Phone: +91-8434460542</p>
+                <textarea placeholder="Write to us..."></textarea>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenvy Registration Panel</title>
+  <link rel="stylesheet" href="/css/style7.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <!-- <img src="https://i.ibb.co/FHVL2mY/book.png" alt="Zenvy Logo" /> -->
+      <span>Zenvy</span>
+    </div class="center-title">
+    <h1>XYZ coaching center</h1>
+  </header>
+
+  <section class="registration-banner">
+    <h2>STUDENT REGISTRATION PANEL</h2>
+    <p>Fill this form to register for next <span class="topper">Topper</span></p>
+  </section>
+
+  <section class="form-section">
+    <div class="form-container">
+      <h3>To Fill Application Form</h3>
+      <p class="session">Session 2025–2026</p>
+
+     <form id="registrationForm" autocomplete="off">
+  <input type="text" name="name" placeholder="Enter Your Name" autocomplete="off" required />
+  <input type="email" name="email" placeholder="Enter Email Id" autocomplete="off" required />
+  <input type="text" name="mobile" value="9999999999" hidden />
+
+  <input type="password" name="password" placeholder="Enter Password" autocomplete="new-password" required />
+  
+  <div class="phone">
+    <input type="text" value="[+91] India" disabled />
+    <input type="text" name="phone" placeholder="" autocomplete="off" required />
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+    </div>
+
+    <div class="illustration">
+      <img src="/images/enroll.png" alt="Illustration" />
+    </div>
+  </section>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <script src="/javascript/script7.js"></script>
+</body>
+</html>

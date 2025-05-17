@@ -1,0 +1,559 @@
+/* General Styles */
+:root {
+    --blue: rgb(8, 10, 73);
+    --orange: rgb(228, 74, 39);
+    --white: #fff;
+    --gray: #333;
+    --light-gray: #f9f9f9;
+    --round: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Navigation */
+.header {
+    background-color: var(--blue);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--orange);
+}
+
+.header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.header nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: var(--round);
+}
+
+.header nav a:hover {
+    color: var(--orange);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Center Header Section */
+.center-header {
+    margin-top: 70px;
+    background: linear-gradient(rgba(8, 10, 73, 0.9), rgba(8, 10, 73, 0.9)), url('images/banner.png') no-repeat center/cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.center-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.center-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+}
+
+.center-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--round);
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+    background: var(--white);
+    width: 100%;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--blue);
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--orange);
+}
+
+/* Courses Section */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.course-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-content {
+    padding: 1.5rem;
+}
+
+.course-content h3 {
+    color: var(--blue);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.course-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Grid Layouts */
+.video-grid,
+.faculty-grid,
+.toppers-grid,
+.testimonials-grid,
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Card Styles */
+.video-card,
+.faculty-card,
+.topper-card,
+.testimonial-card,
+.feature-card {
+    background: var(--white);
+    border-radius: var(--round);
+    padding: 2rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.video-card:hover,
+.faculty-card:hover,
+.topper-card:hover,
+.testimonial-card:hover,
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Video Section */
+.video-card {
+    text-align: left;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: var(--round);
+    margin-top: 1rem;
+}
+
+.video-card h3 {
+    font-size: 1.2rem;
+    color: var(--blue);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Faculty Section */
+.faculty-card {
+    background: var(--blue);
+    color: var(--white);
+    text-align: left;
+}
+
+.faculty-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    text-align: left;
+}
+
+.faculty-card p {
+    color: var(--white);
+    opacity: 0.9;
+    text-align: left;
+}
+
+/* Toppers Section */
+.topper-card {
+    text-align: left;
+}
+
+.topper-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topper-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--blue);
+    text-align: left;
+}
+
+.topper-card p {
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.topper-card p strong {
+    color: var(--orange);
+}
+
+/* Testimonials Section */
+.testimonial-card {
+    background: var(--blue);
+    color: var(--white);
+    text-align: left;
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-card h3 {
+    color: var(--orange);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin: 1rem 0;
+    color: var(--white);
+    text-align: left;
+}
+
+/* Features Section */
+.feature-card {
+    text-align: left;
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--blue);
+    text-align: left;
+}
+
+.feature-card p {
+    text-align: left;
+}
+
+/* Center Description Section */
+.center-description {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.center-description h2 {
+    text-align: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-description p {
+    line-height: 1.8;
+    color: var(--gray);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Error Message */
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff3f3;
+    border-radius: var(--round);
+    border: 1px solid #ffcdd2;
+    margin-top: 70px;
+}
+
+.error-message h2 {
+    color: var(--orange);
+    margin-bottom: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 3rem 0;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--orange);
+}
+
+.footer-column a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.8rem;
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--orange);
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--orange);
+    transform: translateY(-3px);
+}
+
+.footer-column textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: var(--round);
+    resize: vertical;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.footer-column textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .center-header {
+        height: 300px;
+    }
+
+    .center-header h1 {
+        font-size: 2rem;
+    }
+
+    .center-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .header nav a {
+        margin: 0;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .course-details {
+        grid-template-columns: 1fr;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Why Join Us Section */
+.why-join {
+    background-color: var(--light-gray);
+    padding: 80px 0;
+}
+
+.why-join-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.why-join-card {
+    background: var(--white);
+    border-radius: var(--round);
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.why-join-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.why-join-card i {
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: 1.5rem;
+}
+
+.why-join-card h3 {
+    color: var(--blue);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.why-join-card p {
+    color: var(--gray);
+    line-height: 1.6;
+}

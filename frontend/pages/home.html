@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenvy - Home</title>
+  <link rel="stylesheet" href="/css/Homee.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* ===== BASIC SETUP ===== */
+    :root {
+      --blue: rgb(8, 10, 73);      /* Main blue color */
+      --orange: rgb(228, 74, 39);  /* Main orange color */
+      --white: #fff;               /* White color */
+      --gray: #333;                /* Dark gray for text */
+      --light-gray: #f9f9f9;       /* Light gray for backgrounds */
+      --round: 8px;                /* For rounded corners */
+    }
+
+    /* ===== NAVIGATION BAR ===== */
+    .header {
+      background-color: var(--blue);
+      padding: 1rem 2rem;
+      padding-right: calc(2rem + 17px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      border-radius: var(--round);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem;
+      }
+
+      nav a {
+        margin-left: 0.5rem;
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Fixed Header -->
+  <header class="header">
+    <a href="/" class="logo">Zenvy</a>
+    <nav>
+      <a href="/home">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/signup">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- ✅ Main Content -->
+  <main class="main-container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="tagline">Unlock Your Potential – Discover the Perfect Coaching Center for Your Success!</h1>
+        <p class="hero-subtitle">Find the best coaching institutes across India and take the first step towards your dreams</p>
+        <button onclick="window.location.href='/search'" class="cta-button">
+          Find Your Perfect Coaching <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="hero-image">
+        <img src="https://i.pinimg.com/736x/0c/89/50/0c895054ba280c1415007d88c2d3a7a5.jpg" alt="Top CA Coaching Banner" class="banner-image"/>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stat-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>1000+</h3>
+        <p>Coaching Centers</p>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-users"></i>
+        <h3>50,000+</h3>
+        <p>Happy Students</p>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-star"></i>
+        <h3>4.8/5</h3>
+        <p>Average Rating</p>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <i class="fas fa-search"></i>
+          <h3>Search</h3>
+          <span>For coaching or courses across India. Narrow based on goals and location.</span>
+        </div>
+        <div class="step">
+          <i class="fas fa-balance-scale"></i>
+          <h3>Compare</h3>
+          <span>View and filter based on features, courses offered, and fees.</span>
+        </div>
+        <div class="step">
+          <i class="fas fa-laptop"></i>
+          <h3>Apply Online</h3>
+          <span>For Demo Classes, Counseling, or Full Admission from your phone.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <h2>Services we provide</h2>
+      <div class="category-buttons">
+        <button><i class="fas fa-atom"></i> Jee Mains</button>
+        <button><i class="fas fa-book"></i> UPSC</button>
+        <button><i class="fas fa-heartbeat"></i> NEET</button>
+        <button><i class="fas fa-calculator"></i> 10th Boards</button>
+        <button><i class="fas fa-chalkboard-teacher"></i> Private Tutors</button>
+        <button><i class="fas fa-graduation-cap"></i> 12th Boards</button>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Our Students Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="student-info">
+            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Student">
+            <div>
+              <h4>Priya Sharma</h4>
+              <p>JEE Aspirant</p>
+            </div>
+          </div>
+          <p class="testimonial-text">"Found the perfect coaching center through Zenvy. The detailed reviews and comparisons helped me make the right choice!"</p>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="student-info">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Student">
+            <div>
+              <h4>Rahul Verma</h4>
+              <p>NEET Aspirant</p>
+            </div>
+          </div>
+          <p class="testimonial-text">"The platform made it so easy to compare different coaching centers. Saved me a lot of time and effort!"</p>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="top-institutes">
+      <h3>Top Institutes for JEE</h3>
+      <div class="institute-grid">
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/93/8d/58/938d5885392382d346db162e962d1009.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>IIT Academy</h4>
+            <p>Success Rate: 95%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/3e/52/1d/3e521d57771e790cd7704a51048b8951.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>IIM Academy</h4>
+            <p>Success Rate: 92%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/9a/2a/f1/9a2af17d21ee4260261787956af9a89e.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>NIT Academy</h4>
+            <p>Success Rate: 90%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/ac/23/ff/ac23ff597406ea65c047477c32aa33f0.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>BIT Academy</h4>
+            <p>Success Rate: 88%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/fb/c6/9d/fbc69d9304c34d8789327751f16c9b17.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>SRM Academy</h4>
+            <p>Success Rate: 85%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/38/4a/ba/384abaf4f580c290ede3ed6b887edf74.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>PSG Academy</h4>
+            <p>Success Rate: 82%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Top Institutes for NEET</h3>
+      <div class="institute-grid">
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/e4/d0/c9/e4d0c967c6e289db562857fb09d6b37a.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>MedPrep Academy</h4>
+            <p>Success Rate: 92%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/ce/b2/e1/ceb2e10e0e56daf3c8515c4cdd32c923.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>AIIMS Academy</h4>
+            <p>Success Rate: 88%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/fe/a2/65/fea26559ba377c00d46a6d79480a343f.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>NEET Prep</h4>
+            <p>Success Rate: 85%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/7e/b5/06/7eb50692b0c65fbd98219a42cad8ddf3.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>AIIMS PG</h4>
+            <p>Success Rate: 82%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/df/d2/d7/dfd2d74bace7acf2e758585cce6d754e.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>AIIMS PG</h4>
+            <p>Success Rate: 82%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="institute-card">
+          <img src="https://i.pinimg.com/736x/af/24/8d/af248d3d9e25c91325b1a6455f1856a0.jpg" alt="Institute" />
+          <div class="institute-info">
+            <h4>AIIMS PG</h4>
+            <p>Success Rate: 82%</p>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest updates on coaching centers and educational opportunities</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section> -->
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-envelope"></i> support@zenvy.com</p>
+        <p><i class="fas fa-phone"></i> +91-8434460542</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="/about">About Us</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Zenvy. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="/javascript/Homee.js"></script>
+</body>
+</html>

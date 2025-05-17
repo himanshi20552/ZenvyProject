@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up | Zenvy</title>
+  <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Zenvy</div>
+    <nav>
+      <a href="/home">Home</a>
+      <a href="/home">About Us</a>
+      <a href="/login">Login</a>
+    </nav>
+  </header>
+
+  <div class="signup-container">
+    <h1>Create Your Account</h1>
+    <form action="#" method="post" class="signup-form">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required minlength="6">
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p class="login-link">Already have an account? <a href="/login">Login</a></p>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Zenvy. All Rights Reserved.</p>
+  </footer>
+
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
+  import { getFirestore, doc, setDoc, Timestamp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCWcWclniiicDfkzsURaAwrK-Et5mdA6Sc",
+    authDomain: "zenvy-7dc85.firebaseapp.com",
+    projectId: "zenvy-7dc85",
+    storageBucket: "zenvy-7dc85.firebasestorage.app",
+    messagingSenderId: "26583439213",
+    appId: "1:26583439213:web:6f7ccfc516bd63727eec64",
+    measurementId: "G-CY3JQ85JE0"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const analytics = getAnalytics(app);
+
+  const signupForm = document.querySelector('.signup-form');
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User created:", user.uid);
+
+        return setDoc(doc(db, "users", user.uid), {
+          uid: user.uid,
+          email: user.email,
+          firstName: firstName,
+          lastName: lastName,
+          createdAt: Timestamp.now() // ✅ Proper Firestore Timestamp
+        });
+      })
+      .then(() => {
+        console.log("User data saved to Firestore successfully.");
+        alert("Sign up successful! You can now log in.");
+        window.location.href = "/login";
+      })
+      .catch((error) => {
+        console.error("Error during signup:", error.message);
+        alert("Error: " + error.message);
+      });
+  });
+</script>
+
+</body>
+</html>
